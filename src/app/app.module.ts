@@ -1,27 +1,29 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { RouterModule, PreloadAllModules } from '@angular/router';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import '../styles/styles.scss';
+import '../styles/headings.css';
 
+import { AppState, InternalStateType } from './app.service';
+import { PreloadAllModules, RouterModule } from '@angular/router';
+
+import { APP_RESOLVER_PROVIDERS } from './app.resolver';
+import { AboutComponent } from './about';
+// App is our top level component
+import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserModule } from '@angular/platform-browser';
+import { DevModuleModule } from './+dev-module';
+import { FooterComponent } from './bb-ui/components/footer/footer.component'
+import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './home';
+import { HttpClientModule } from '@angular/common/http';
+import { LogoComponent } from './bb-ui/components/logo/logo.component';
+import { NgModule } from '@angular/core';
+import { NoContentComponent } from './no-content';
+import { ROUTES } from './app.routes';
+import { XLargeDirective } from './home/x-large';
 /*
  * Platform and Environment providers/directives/pipes
  */
 import { environment } from 'environments/environment';
-import { ROUTES } from './app.routes';
-// App is our top level component
-import { AppComponent } from './app.component';
-import { APP_RESOLVER_PROVIDERS } from './app.resolver';
-import { AppState, InternalStateType } from './app.service';
-import { HomeComponent } from './home';
-import { AboutComponent } from './about';
-import { NoContentComponent } from './no-content';
-import { XLargeDirective } from './home/x-large';
-import { DevModuleModule } from './+dev-module';
-
-import '../styles/styles.scss';
-import '../styles/headings.css';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -45,7 +47,9 @@ interface StoreType {
     AboutComponent,
     HomeComponent,
     NoContentComponent,
-    XLargeDirective
+    XLargeDirective,
+	LogoComponent,
+	FooterComponent
   ],
   /**
    * Import Angular's modules.
