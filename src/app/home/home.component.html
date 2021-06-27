@@ -1,7 +1,90 @@
-<div>
-  <h1 x-large class="sample-content">Your Content Here</h1>
+<div class="container">
+  <div class="row align-items-start pt-5">
+    <div class="col-4">
+      <div class="border-0 bg-white" style="border-radius: 12px;">
+        <div class="p-2 text-white" style="background-color: #3894D7; border-top-left-radius: 12px; border-top-right-radius: 12px; height:40px">
+          <i class="bi bi-wallet2"></i>
+          <strong> Make</strong> Transfer
+        </div>
+        <div class="p-3">
+          <div class="mb-3">
+            <label for="fromAccount" class="form-label" style="font-weight: 500">From Account</label>
+            <input type="text" class="form-control disabled" id="fromAccount" aria-label="From Account" placeholder="" value="My Personal Account &euro; 5824.76">
+          </div>
+          <div class="mb-3">
+            <label for="toAccount" class="form-label" style="font-weight: 500">To Account</label>
+            <input type="text" class="form-control" id="toAccount" aria-label="To Account" placeholder="type an account name" required>
+          </div>
+          <label for="amount" class="form-label" style="font-weight: 500">Amount</label>
+          <div class="input-group mb-3">
+            <span class="input-group-text">&euro;</span>
+            <input type="text" class="form-control" aria-label="Amount" placeholder="specify the amount" required>
+            <!-- It is a mandatory field -->
+            <!-- Negative numbers are not allowed -->
+            <!-- Decimals are permitted -->
+            <div id="validationServerFeedback" class="invalid-feedback">
+              It should not allow amount below the total balance of -€500
+            </div>
+          </div>
+          <div class="mb-3 text-end">
+            <app-submit-button style="background-color:#DB6C36; border: #DB6C36;"></app-submit-button>
+            <!-- <button type="button" class="btn btn-primary" style="background-color:#DB6C36; border: #DB6C36;">Submit</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-8">
+      <div class="border-0 bg-white" style="border-radius: 12px;">
+        <div class="p-2 text-white" style="background-color: #3894D7; border-top-left-radius: 12px; border-top-right-radius: 12px; height:40px">
+          <i class="bi bi-list-ul"></i>
+          Transaction <strong>List</strong>
+        </div>
+        <div class="p-3">
+          <div class="input-group mb-3" style="width: 50%;">
+            <span class="input-group-text" id="basic-addon1"><i class="bi bi-search"></i></span>
+            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
 
-  <!-- <hr>
+        </div>
+        <div class="p-4">
+          <!-- <app-transaction-item></app-transaction-item> -->
+          <!-- positive amount -->
+          <div class="row align-items-center" style="border-left: 4px solid red; padding-left:10px; height:100%;">
+            <div class="col-2">
+              <!-- <div style="border-left: 4px solid green; padding-left:10px; height:100%;">Oct. 14</div> -->
+              Oct. 14
+            </div>
+            <div class="col-8 text-start">
+              <span style="font-weight: 500;">H&M Online Store </span><br>
+              <span class="text-muted">Online Transfer</span>
+            </div>
+            <div class="col-2">
+              <span class="text-danger"> &euro; -19.72</span>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="p-4">
+          <!-- negative amount -->
+          <div class="row align-items-center" style="border-left: 4px solid green; padding-left:10px; height:100%;">
+            <div class="col-2">
+              <!-- <div style="border-left: 4px solid green; padding-left:10px; height:100%;">Oct. 14</div> -->
+              Oct. 14
+            </div>
+            <div class="col-8 text-start">
+              <span style="font-weight: 500;">Backbase </span><br>
+              <span class="text-muted">Salaries</span>
+            </div>
+            <div class="col-2">
+              <span class="text-success"> &euro; 5000</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <h1 x-large class="sample-content">Your Content Here</h1> -->
+
+      <!-- <hr>
 
   <div>
     For hot module reloading run
@@ -11,9 +94,9 @@
   <hr>
 
   <div> -->
-    <!-- <h4>Local State</h4> -->
+      <!-- <h4>Local State</h4> -->
 
-    <!-- <form (ngSubmit)="submitState(localState.value)" autocomplete="off">
+      <!-- <form (ngSubmit)="submitState(localState.value)" autocomplete="off">
 
       <input
         [value]="localState.value"
@@ -23,15 +106,15 @@
 
       <button>Submit Value</button>
     </form> -->
-    <!--
+      <!--
         <input type="text" [value]="localState.value" (input)="localState.value = $event.target.value" autofocus>
         Rather than wiring up two-way data-binding ourselves with [value] and (input)
         we can use Angular's [(ngModel)] syntax
         <input type="text" name="textInput" [(ngModel)]="localState.value" autofocus>
       -->
 
-    <!-- <pre>this.localState = {{ localState | json }}</pre> -->
+      <!-- <pre>this.localState = {{ localState | json }}</pre> -->
 
-  <!-- </div> -->
+      <!-- </div> -->
 
-</div>
+    </div>

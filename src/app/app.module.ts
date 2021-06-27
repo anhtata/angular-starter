@@ -8,6 +8,7 @@ import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AboutComponent } from './about';
 // App is our top level component
 import { AppComponent } from './app.component';
+import { BbUIModule } from './bb-ui/bb-ui.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { DevModuleModule } from './+dev-module';
@@ -19,6 +20,8 @@ import { LogoComponent } from './bb-ui/components/logo/logo.component';
 import { NgModule } from '@angular/core';
 import { NoContentComponent } from './no-content';
 import { ROUTES } from './app.routes';
+import {SubmitButtonComponent} from './bb-ui/components/submit-button/submit-button.component';
+import {TransactionItemComponent} from './bb-ui/components/transaction-item/transaction-item.component';
 import { XLargeDirective } from './home/x-large';
 /*
  * Platform and Environment providers/directives/pipes
@@ -49,7 +52,9 @@ interface StoreType {
     NoContentComponent,
     XLargeDirective,
 	LogoComponent,
-	FooterComponent
+	FooterComponent,
+	SubmitButtonComponent,
+	TransactionItemComponent
   ],
   /**
    * Import Angular's modules.
@@ -59,6 +64,7 @@ interface StoreType {
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
+	// BbUIModule,
     RouterModule.forRoot(ROUTES, {
       useHash: Boolean(history.pushState) === false,
       preloadingStrategy: PreloadAllModules
